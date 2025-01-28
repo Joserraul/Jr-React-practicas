@@ -1,2 +1,0 @@
-# Jr-React-practicas
- practicar 
