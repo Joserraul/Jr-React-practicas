@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Input from "../Components/input";
 import Button from "../Components/Button";
 
@@ -14,14 +15,18 @@ function Navbar() {
         <Input
           type="text"
           placeholder="Buscar..."
-          className="w-full p-2 rounded-lg focus:ring focus:ring-blue-500" 
+          className="w-full p-2 rounded-lg focus:ring focus:ring-blue-500"
         />
       </div>
 
       {/* Botones en el lado derecho */}
       <div className="space-x-4">
-        <Button >Home</Button>
-        <Button >Iniciar sesion</Button>
+        <Link to="./../Home">
+          <Button >Home</Button>
+        </Link>
+        <Link to="./../login">
+        < Button >Login</Button>
+        </Link>
       </div>
     </nav>
   );
