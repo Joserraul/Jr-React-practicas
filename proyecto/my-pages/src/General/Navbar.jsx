@@ -1,35 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Input from "../Components/input";
-import Button from "../Components/Button";
 
 
 function Navbar() {
+const location = useLocation();
+const navigate = useNavigate();
+const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("user");
+    setIsAuthenticated(!!token);{
+    } [location.pathname]
+  });
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    navigate("/");
+  };
+
+
   return (
-    <nav className="flex items-center justify-between p-4 bg-purple-900 border">
+    <nav className="flex items-center justify-between p-4 bg-gray-800">
       {/* Nombre en el lado izquierdo */}
       <div className="text-lg font-semibold">MyApp</div>
 
-      {/* Buscador en el centro */}
       <div className="flex-grow mx-4">
         <Input
           type="text"
           placeholder="Buscar..."
-          className="w-full p-2 rounded-lg focus:ring focus:ring-blue-500"
+          className="w-full p-2 rounded-lg focus:ring focus:outline-none"
         />
       </div>
 
-      {/* Botones en el lado derecho */}
       <div className="space-x-4">
-        <Link to="./../main">
-          <Button >Home</Button>
-        </Link>
-        <Link to="./../login">
-        < Button >Login</Button>
-        </Link>
+        {location.pathname !== "/login" && (
+          <>
+            <Link to="/" className="text-white">Home</Link>
+            {isAuthenticated ? (
+              <button onClick={logout} className="text-white">Logout</button>
+            ) : (
+              <Link to="/login" className="text-white">Login</Link>
+            )}
+          </>
+        )}
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
