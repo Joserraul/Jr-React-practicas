@@ -21,7 +21,7 @@ function Navbar() {
 
       {/* Botones en el lado derecho */}
       <div className="space-x-4">
-        <Link to="./../Home">
+        <Link to="./../main">
           <Button >Home</Button>
         </Link>
         <Link to="./../login">
