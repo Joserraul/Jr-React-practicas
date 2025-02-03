@@ -3,7 +3,15 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import Navbar from "../General/Navbar";
 
+/**
+ * @function Login - Componente de inicio de sesión
+ * @const navigate - Variable que almacena la ubicación del usuario
+ * @const actData - Función que actualiza los datos del usuario
+ * @const tryData - Función que intenta iniciar sesión
+ * @const loginData - Variable que almacena los datos del usuario
+ * @returns {JSX.Element} - Componente de inicio de sesión
 
+*/
 function Login() {
 
   const [loginData, setLoginData] = useState({

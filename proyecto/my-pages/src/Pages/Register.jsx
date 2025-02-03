@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./../General/Navbar";
 
+/**
+ * @function Register - Componente de registro
+ * @newData - Función que actualiza los datos del usuario
+ * @saveData - Función que guarda los datos del usuario
+ * @returns {JSX.Element} - Componente de registro
+ */
+
 
 function Register() {
   const [formData, setFormData] = useState({

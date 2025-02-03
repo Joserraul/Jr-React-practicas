@@ -4,6 +4,15 @@ import { useEffect, useState } from "react";
 import Input from "../Components/input";
 
 
+/**
+ * @function Navbar - Componente de la barra de navegación
+ * @returns {JSX.Element} - Componente de la barra de navegación
+ * @const Token - Variable que almacena el token del usuario
+ * @const isAuthenticated - Variable que almacena si el usuario está autenticado
+ * @const location - Variable que almacena la ubicación del usuario
+ */
+
+
 function Navbar() {
 const location = useLocation();
 const navigate = useNavigate();

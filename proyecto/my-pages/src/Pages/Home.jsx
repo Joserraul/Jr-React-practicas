@@ -3,6 +3,12 @@ import Navbar from "./../General/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+/**
+ * @function Home - Componente de la página principal
+ * @useEffect - Hook que se ejecuta cuando se monta el componente
+ * @setSpells - Función que actualiza la lista de hechizos
+ * @return {JSX.Element} - Componente de la página principal
+*/
 function Home(){
 const [spells, setSpells] = useState([]);
 
